@@ -5,7 +5,7 @@ import {
   deleteTodo,
   getTodos,
   updateTodo,
-} from "../controllers/todos.controllers.js";
+} from "../controllers/todos.js";
 import { checkAuth } from "../middleware/auth.js";
 
 const todoRouter = Router();

@@ -1,6 +1,5 @@
 import { model, Schema } from "mongoose";
 
-
 const todoSchema = new Schema(
   {
     user: {

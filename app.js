@@ -17,7 +17,7 @@ app.set("trust proxy", true);
 app.use(
   cors({
     credentials: true,
-    origin: new RegExp(process.env.CORS_ORIGIN || "http://localhost:5173"),
+    origin: new RegExp(process.env.CORS_ORIGIN || "https://to-do-app-front-phi.vercel.app/"),
   }),
 );
 app.use(helmet());

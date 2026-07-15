@@ -9,17 +9,19 @@ import { errorHandler, notFoundHandler } from "./middleware/errorHandler.js";
 import helmet from "helmet";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // middlewares
 app.set("trust proxy", true);
 
 app.use(
   cors({
+    origin: process.env.CORS_ORIGIN,
     credentials: true,
-    origin: new RegExp(process.env.CORS_ORIGIN || "https://to-do-app-front-phi.vercel.app/"),
-  }),
+  })
 );
+
+
 app.use(helmet());
 
 app.use(express.json());

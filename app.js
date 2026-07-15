@@ -27,9 +27,16 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(morgan("dev"));
 
+
 // routes
 app.use("/auth", authRouter);
 app.use("/todos", todoRouter);
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Backend is running!"
+  });
+});
 
 // not found
 app.use(notFoundHandler);
